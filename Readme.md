@@ -40,17 +40,19 @@ The algorithms supported by system are:
 
 
 
-## Deployment Instructions
+# Deployment Instructions
 
-## Recommended Code Editor For UI
+> Recommended Code Editor For UI
 
 [Visual Studio Code](https://code.visualstudio.com/download)
 
-## This document is only for Ubuntu. Code will work onto other OS but i haven't tried running it
+This document is only for Ubuntu. Code will work onto other OS but i haven't tried running it
 
 
-# How to setup UI
+## How to setup UI
+
 The project is build on materialize css and simple javascript, you dont need to download libraries specific for the project, you just need apache2.
+
 ## How to setup Apache2
 
 - Apache2: 
@@ -65,7 +67,7 @@ The project is build on materialize css and simple javascript, you dont need to 
 
 After completeing the setup go onto your browser and type [localhost](127.0.0.1) you should be able to see the apache2 welcome page.
 
-## NOTE: Apache sometimes conflicts with nginx 
+> NOTE: Apache sometimes conflicts with nginx 
 
 After doing that copy and paste the Predator folder in `/var/www/html/`
 
@@ -117,7 +119,7 @@ After doing that we will need [couchbase python dependency](https://docs.couchba
 
 Link to the [documentation](http://docs.couchbase.com/sdk-api/couchbase-python-client-2.1.1/) of couchbase client
 
-### NOTE: If you are creating the `Buckets` yourself, then add following code in CouchController.py script to fill data or you can simply launch web application (localhost/Predator) to complete the registration process.
+> NOTE: If you are creating the `Buckets` yourself, then add following code in CouchController.py script to fill data or you can simply launch web application (localhost/Predator) to complete the registration process.
 
 -- `couch = CouchAPI('Administrator', 'password', '0.0.0.0')`
 
@@ -150,7 +152,7 @@ Backend of the project is build on python 3.6, if you are a linux user it comes 
 
 
 
-## Don't upgrade your python-pip to newer version, the newer version is unstable you wont be able to install any python dependencies via pip, but instead you will have to use python-pip command to install dependencies.
+> Don't upgrade your python-pip to newer version, the newer version is unstable you wont be able to install any python dependencies via pip, but instead you will have to use python-pip command to install dependencies.
 
 ## [Python Flask](http://flask.pocoo.org/)
 
