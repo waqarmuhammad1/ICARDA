@@ -1,3 +1,45 @@
+## Functionalities details
+
+Right now this system supports analysis on following data sources:
+
+1. Excel
+2. CSV
+3. MYSQL
+4. Oracle
+5. MSSQL
+
+Following statistical analysis of data is supported by system so far are:
+
+1. Correlation Matrix.
+2. Data set description (Mean, mode, median, percentiles, std, max, min) of each available dataset column.
+3. Histograms.
+4. Scatter plots.
+5. Box plots.
+
+Following functionalities available for user to clean their data set:
+
+1. Drop missing columns.
+2. Drop missing rows.
+3. Fill missing values by mean.
+4. Fill missing values by median.
+5. Fill missing values by standard deviation.
+6. Fill missing values by most frequent values in targeted column.
+7. Change string attribute encoding.
+
+The algorithms supported by system are:
+
+1. Linear regression.
+2. Elastic regression.
+3. Lars regression.
+4. Lasso regression.
+5. LassoLars regression.
+6. Gausian Naive bayes.
+7. Bernoulli Naive bayes.
+8. Linear SVC
+9. Support vector machine.
+
+
+
 ## Deployment Instructions
 
 ## Recommended Code Editor For UI
