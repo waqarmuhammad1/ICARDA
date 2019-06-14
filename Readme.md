@@ -38,6 +38,17 @@ The algorithms supported by system are:
 8. Linear SVC
 9. Support vector machine.
 
+File formats supported for Human subject analysis are:
+1. .pdf
+2. .docx
+3. .xlsx
+4. .ppt
+5. .jpg
+6. .png
+7. .jpeg
+8. .mp4
+9. .3gp
+
 
 
 # Deployment Instructions
