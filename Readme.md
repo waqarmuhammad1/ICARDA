@@ -142,6 +142,7 @@ To connect Backend API to Frontend we are using [Flask](http://flask.pocoo.org/)
 
 `sudo conda install -c conda-forge tensorflow keras mkl-service opencv numpy scipy pillow matplotlib h5py`
 
+Download trained object detection model from following link [RetinaNet] (https://github.com/OlafenwaMoses/ImageAI/releases/download/1.0/resnet50_coco_best_v2.0.1.h5)
 
 After installing above libraries, you have to run two API files through terminal or any perferred python IDE
 1. RunAPI.py (python3 RunAPI.py) machine learning modeling and statistical analysis api running on port 5000 and ip 0.0.0.0
