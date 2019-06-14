@@ -1,12 +1,69 @@
-# Recommended Code Editor For UI
+## Functionalities details
+
+Right now this system supports analysis on following data sources:
+
+1. Excel
+2. CSV
+3. MYSQL
+4. Oracle
+5. MSSQL
+
+Following statistical analysis of data is supported by system so far are:
+
+1. Correlation Matrix.
+2. Data set description (Mean, mode, median, percentiles, std, max, min) of each available dataset column.
+3. Histograms.
+4. Scatter plots.
+5. Box plots.
+
+Following functionalities available for user to clean their data set:
+
+1. Drop missing columns.
+2. Drop missing rows.
+3. Fill missing values by mean.
+4. Fill missing values by median.
+5. Fill missing values by standard deviation.
+6. Fill missing values by most frequent values in targeted column.
+7. Change string attribute encoding.
+
+The algorithms supported by system are:
+
+1. Linear regression.
+2. Elastic regression.
+3. Lars regression.
+4. Lasso regression.
+5. LassoLars regression.
+6. Gausian Naive bayes.
+7. Bernoulli Naive bayes.
+8. Linear SVC
+9. Support vector machine.
+
+File formats supported for Human subject analysis are:
+1. .pdf
+2. .docx
+3. .xlsx
+4. .ppt
+5. .jpg
+6. .png
+7. .jpeg
+8. .mp4
+9. .3gp
+
+
+
+# Deployment Instructions
+
+> Recommended Code Editor For UI
 
 [Visual Studio Code](https://code.visualstudio.com/download)
 
-## This document is only for Ubuntu. Code will work onto other OS but i haven't tried running it
+This document is only for Ubuntu. Code will work onto other OS but i haven't tried running it
 
 
-# How to setup UI
+## How to setup UI
+
 The project is build on materialize css and simple javascript, you dont need to download libraries specific for the project, you just need apache2.
+
 ## How to setup Apache2
 
 - Apache2: 
@@ -21,14 +78,14 @@ The project is build on materialize css and simple javascript, you dont need to 
 
 After completeing the setup go onto your browser and type [localhost](127.0.0.1) you should be able to see the apache2 welcome page.
 
-## NOTE: Apache sometimes conflicts with nginx 
+> NOTE: Apache sometimes conflicts with nginx 
 
 After doing that copy and paste the Predator folder in `/var/www/html/`
 
 You can now access UI via `localhost/Predator`
 
 
-# How to setup user login Database [Couchdb](http://couchdb.apache.org/)
+## How to setup user login Database [Couchdb](http://couchdb.apache.org/)
 
 I have used NOSQL [couchdb](http://couchdb.apache.org/) docker image as user login database, so you will need to install [Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/#os-requirements)
 
@@ -73,7 +130,7 @@ After doing that we will need [couchbase python dependency](https://docs.couchba
 
 Link to the [documentation](http://docs.couchbase.com/sdk-api/couchbase-python-client-2.1.1/) of couchbase client
 
-# NOTE: If you are creating the `Buckets` yourself, then add following code in CouchController.py script to fill data or you can simply launch web application (localhost/Predator) to complete the registration process.
+> NOTE: If you are creating the `Buckets` yourself, then add following code in CouchController.py script to fill data or you can simply launch web application (localhost/Predator) to complete the registration process.
 
 -- `couch = CouchAPI('Administrator', 'password', '0.0.0.0')`
 
@@ -100,13 +157,13 @@ Link to the [documentation](http://docs.couchbase.com/sdk-api/couchbase-python-c
 
 
 
-# How to setup python environment
+## How to setup python environment
 
 Backend of the project is build on python 3.6, if you are a linux user it comes along with all linux distributions so we don't need to download it specifically
 
 
 
-## Don't upgrade your python-pip to newer version, the newer version is unstable you wont be able to install any python dependencies via pip, but instead you will have to use python-pip command to install dependencies.
+> Don't upgrade your python-pip to newer version, the newer version is unstable you wont be able to install any python dependencies via pip, but instead you will have to use python-pip command to install dependencies.
 
 ## [Python Flask](http://flask.pocoo.org/)
 
