@@ -23,7 +23,7 @@ extractor = Extractor()
 holder = Holder()
 stats = Stats()
 processor = Processor()
-couch = CouchAPI('Administrator', 'password', '0.0.0.0')
+couch = CouchAPI(os.environ['DB_USERNAME'], os.environ['DB_PASSWORD'], os.environ['DB_HOST'])
 couch.open_bucket()
 
 app = Flask(__name__)
@@ -149,6 +149,9 @@ def upload_file():
 
         logger.log('Check if allowed file')
         if user_file and allowed_file(user_file.filename):
+            if not os.path.exists(app.config['UPLOAD_FOLDER']):
+                os.makedirs(app.config['UPLOAD_FOLDER'])
+
             filename = secure_filename(user_file.filename)
             file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
             logger.log('saving user file in upload folder')

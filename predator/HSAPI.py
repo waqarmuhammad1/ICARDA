@@ -70,6 +70,9 @@ def upload_file():
 
         logger.log('Check if allowed file')
         if user_file and allowed_file_HSA(user_file.filename):
+            if not os.path.exists(app.config['UPLOAD_FOLDER']):
+                os.makedirs(app.config['UPLOAD_FOLDER'])
+
             filename = secure_filename(user_file.filename)
             file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
             logger.log('saving user file in upload folder')

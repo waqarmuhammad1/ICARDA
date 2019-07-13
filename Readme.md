@@ -216,3 +216,56 @@ You should see something like this.
  * Debugger is active!
  * Debugger PIN: 176-475-588
 `
+
+
+##Install using docker compose
+Clone
+```
+$ git clone https://github.com/waqarmuhammad1/ICARDA.git && cd ICARDA
+```
+
+Create configVariables.js to define your environment values
+```
+$ vim PredatorI/js/configVariables.js
+```
+```
+const configVariables = {
+    APPLICATION_DOMAIN: 'http://localhost', //<Domain>
+    API_PORT: 810, //API port, defined in docker-compose.yml 810:5000
+    HSAPI_PORT: 811, //HSAPI port, defined in docker-compose.yml 811:5001
+};
+```
+
+Download trained object detection model from following link [RetinaNet]
+```
+$ wget https://github.com/OlafenwaMoses/ImageAI/releases/download/1.0/resnet50_coco_best_v2.0.1.h5
+```
+
+Build the docker
+```
+$ docker-compose up -d --build
+```
+
+After the build completes, you can access couchdb from `localhost:8091`, the initial username is `Administrator` and password is `password`.
+Add the following buckets:
+  1. user_auth (100mb)
+  2. email_auth (100mb)
+  3. auth (100mb)
+  4. auth_email (100mb)
+
+Check if the application is running
+```
+$ docker logs -f --tail 50 python
+```
+In the output, you should see `Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)` and `Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)`
+
+Access the application through http://localhost:812/PredatorI
+
+**Note:** In case of changing couchdb default username and password, it should be changed in `docker-compose.yml`:
+``` 
+    environment:
+      - "DB_HOST=python_db"
+      - "DB_USERNAME=Administrator"
+      - "DB_PASSWORD=password"
+``` 
+

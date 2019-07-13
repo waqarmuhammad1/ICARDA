@@ -1,0 +1,26 @@
+version: '2'
+services:
+  python_db:
+    container_name: python_db
+    image: couchbase/server-sandbox:5.5.0
+    ports:
+      - 8091-8094:8091-8094
+      - 11210:11210
+  python:
+    container_name: python
+    depends_on:
+      - python_db
+    links:
+      - python_db
+    build: python
+    volumes:
+      - .:/var/www/html/
+    ports:
+      - 810:5000
+      - 811:5001
+      - 812:80
+    restart: always
+    environment:
+      - "DB_HOST=python_db"
+      - "DB_USERNAME=Administrator"
+      - "DB_PASSWORD=password"
