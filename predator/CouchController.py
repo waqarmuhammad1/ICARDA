@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from couchbase.cluster import Cluster, PasswordAuthenticator
 from couchbase.exceptions import *
+import os
 
 
 
@@ -88,7 +89,8 @@ class CouchAPI():
             except:
                 raise
 
-couch = CouchAPI('Administrator', 'password', '0.0.0.0')
+
+couch = CouchAPI(os.environ['DB_USERNAME'], os.environ['DB_PASSWORD'], os.environ['DB_HOST'])
 couch.open_bucket()
 
 username = 'admin'
