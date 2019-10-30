@@ -117,7 +117,7 @@ if they are not create them, `auth` is the bucket in which we are storing user's
 
 
 After doing that we will need [couchbase python dependency](https://docs.couchbase.com/python-sdk/2.4/start-using-sdk.html). Install it using these commands.
-##For Ubuntu 16.04
+## For Ubuntu 16.04
 -- `wget http://packages.couchbase.com/releases/couchbase-release/couchbase-release-1.0-4-amd64.deb`
 
 -- `sudo dpkg -i couchbase-release-1.0-4-amd64.deb`
@@ -130,10 +130,15 @@ After doing that we will need [couchbase python dependency](https://docs.couchba
 ##For Ubuntu 18.04
 
 --  `echo "deb http://packages.couchbase.com/ubuntu bionic bionic/main" | sudo tee /etc/apt/sources.list.d/couchbase.list`
+
 --  `wget -O- http://packages.couchbase.com/ubuntu/couchbase.key | sudo apt-key add -`
+
 --  `sudo apt-get update`
+
 --  `sudo apt-get install libcouchbase2-libevent libcouchbase-dev`
+
 -- `sudo pip3 install couchbase`
+
 Link to the [documentation](http://docs.couchbase.com/sdk-api/couchbase-python-client-2.1.1/) of couchbase client
 
 > NOTE: If you are creating the `Buckets` yourself, then add following code in CouchController.py script to fill data or you can simply launch web application (localhost/Predator) to complete the registration process.
@@ -224,7 +229,7 @@ You should see something like this.
 `
 
 
-##Install using docker compose
+## Install using docker compose
 Clone
 ```
 $ git clone https://github.com/waqarmuhammad1/ICARDA.git && cd ICARDA
